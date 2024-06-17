@@ -1,0 +1,35 @@
+.checkdbox_container {
+  display: flex;
+  gap: 15px;
+}
+
+.lst_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: -25px;
+}
+
+.checkdbox {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+}
+
+.checkdbox:checked::after {
+  content: "✔";
+  color: green;
+  font-size: 14px;
+}
+
+.checkdbox_container label {
+  font-size: 14px;
+}
+
+.label_unchecked {
+  opacity: 0.5;
+}

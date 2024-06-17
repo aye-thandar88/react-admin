@@ -1,0 +1,21 @@
+.inputs_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 70px 80px;
+}
+
+.signup_input {
+  width: 90%;
+  padding: 15px;
+  border-radius: 30px;
+  border: solid 2px #ebeaed;
+}
+
+.signup_btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #1da1f2;
+}

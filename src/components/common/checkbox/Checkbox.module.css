@@ -1,0 +1,30 @@
+.cbox_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cbox_container input {
+  width: 20px;
+  height: 20px;
+  background-color: #25dac5;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.cbox_container input:checked::after {
+  content: "✔";
+  color: #1e0e62;
+  font-size: 14px;
+}
+
+.label {
+  font-size: 16px;
+  color: #151439;
+  opacity: 40%;
+  margin-bottom: 2px;
+}

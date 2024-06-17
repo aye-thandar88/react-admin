@@ -1,0 +1,56 @@
+.inputs_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 35px;
+  padding: 50px;
+}
+
+.first_con {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input_con_label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.full_input_con_label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contact_input {
+  width: 90%;
+  padding: 15px;
+  border-radius: 30px;
+  border: solid 2px #ebeaed;
+}
+
+.msg_textara {
+  width: 90%;
+  padding: 15px;
+  border-radius: 10px;
+  border: solid 2px #ebeaed;
+}
+
+.send_btn {
+  width: 120px;
+  background-color: #25dac5;
+  color: #fff;
+}
+
+.budget_select {
+  width: 140px;
+  padding: 15px;
+  border-radius: 30px;
+  border: solid 2px #ebeaed;
+}

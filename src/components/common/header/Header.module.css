@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.nav_container {
+  padding-top: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 43px;
+}
+
+.nav_li {
+  list-style: none;
+}
+
+.nav_li:hover {
+  font-weight: bold;
+}

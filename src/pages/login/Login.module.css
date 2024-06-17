@@ -1,0 +1,51 @@
+.login_page {
+  margin: 0;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-image: url("../src/assets/svg/login.svg");
+  background-color: #2f1893;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_page_container {
+  display: flex;
+  gap: 130px;
+}
+
+.login_content {
+  width: 369px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form {
+  width: 470px;
+  height: 550px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.signup {
+  width: 50%;
+  background-color: transparent;
+  color: #151439;
+  opacity: 40%;
+  letter-spacing: 2px;
+  border-bottom: solid 2px #979797;
+  border-radius: 0%;
+}
+
+.signup_active {
+  width: 50%;
+  background-color: transparent;
+  color: #151439;
+  opacity: 80%;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-radius: 0%;
+  border-bottom: solid 3px #1e0e62;
+}

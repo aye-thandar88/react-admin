@@ -1,0 +1,90 @@
+.brand_page {
+  margin: 0;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-image: url("../src/assets/svg/login.svg");
+  background-color: #2f1893;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.inner_card_container {
+  width: 815px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 58px;
+  font-weight: bold;
+}
+
+.content {
+  font-size: 18px;
+  opacity: 80%;
+}
+
+.clients_container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+}
+
+.clients_card_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.client_card {
+  width: 430px;
+  min-height: 200px;
+  display: flex;
+  padding: 40px;
+  gap: 20px;
+  border: solid 2px #ffffff41;
+  border-radius: 10px;
+}
+
+.img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.client_content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.text_desc {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.text_name {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 30%;
+}

@@ -1,0 +1,28 @@
+.card_container {
+  display: flex;
+  height: 327px;
+  background-color: transparent;
+  color: white;
+  line-height: 28px;
+  padding: 0 96px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner_card_container {
+  width: 736px;
+}
+
+.span {
+  font-size: 20px;
+}
+
+.title {
+  font-size: 62px;
+  font-weight: bold;
+}
+
+.content {
+  font-size: 16px;
+}
