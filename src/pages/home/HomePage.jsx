@@ -6,8 +6,6 @@ import styles from "./HomePage.module.css";
 import { useNavigate } from "react-router-dom";
 import { cardsData } from "../../assets/constant/cardConstant";
 import HomeLayout from "../../components/layout/homeLayout/HomeLayout";
-import Brand from "../brand/brand";
-import Features from "../features/Features";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -27,8 +25,6 @@ const HomePage = () => {
           Create an Account
         </Button>
       </div>
-      <Features/>
-      <Brand/>
     </HomeLayout>
   );
 };

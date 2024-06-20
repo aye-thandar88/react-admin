@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./Brand.module.css";
 import { clientsList } from "../../assets/constant/clientsConstant";
+import HomeLayout from "../../components/layout/homeLayout/HomeLayout";
 
 const Brand = () => {
   return (
-    <section className={styles.brand_page} id="/Brand">
+    <HomeLayout className={styles.brand_page}>
       <div className={styles.inner_card_container}>
         <span className={styles.span}>FREE SAMPLE</span>
         <h1 className={styles.title}>
@@ -41,7 +42,7 @@ const Brand = () => {
           })}
         </div>
       </div>
-    </section>
+    </HomeLayout>
   );
 };
 

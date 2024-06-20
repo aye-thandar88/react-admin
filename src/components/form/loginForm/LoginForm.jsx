@@ -3,9 +3,9 @@ import Input from "../../common/input/Input";
 import Button from "../../common/button/Button";
 import styles from "./LoginForm.module.css";
 
-const LoginForm = ({ loginInfo }) => {
-  const { email, password,setEmail,setPassword } = { ...loginInfo };
-  
+const LoginForm = ({ loginInfo, onClick }) => {
+  const { email, password, setEmail, setPassword } = { ...loginInfo };
+
   return (
     <form className={styles.inputs_container}>
       <Input
@@ -28,7 +28,7 @@ const LoginForm = ({ loginInfo }) => {
         }}
         className={styles.signup_input}
       />
-      <Button className={styles.signup_btn} onClick={() => {}}>
+      <Button className={styles.signup_btn} onClick={onClick}>
         Login
       </Button>
     </form>

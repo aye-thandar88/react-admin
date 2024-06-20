@@ -4,10 +4,11 @@ import PriceCard from "../../components/common/priceCard/PriceCard";
 import { plans } from "../../assets/constant/priceConstant";
 import ContentCard from "../../components/common/contentCard/ContentCard";
 import { priceContentData } from "../../assets/constant/cardConstant";
+import HomeLayout from "../../components/layout/homeLayout/HomeLayout";
 
 const Pricing = () => {
   return (
-    <div className={styles.pricing_page}>
+    <HomeLayout className={styles.pricing_page}>
       <div className={styles.pricing_container}>
         <ContentCard
           contentData={priceContentData}
@@ -19,7 +20,7 @@ const Pricing = () => {
           })}
         </div>
       </div>
-    </div>
+    </HomeLayout>
   );
 };
 

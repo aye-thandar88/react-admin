@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./Features.module.css";
+import HomeLayout from "../../components/layout/homeLayout/HomeLayout";
 import { featureContentData } from "../../assets/constant/cardConstant";
 import ContentCard from "../../components/common/contentCard/ContentCard";
 
 const Features = () => {
   return (
-    <div className={styles.featuresHome}>
+    <HomeLayout className={styles.featuresHome}>
       <div className={styles.feature_container}>
         <div>
           <img
@@ -52,7 +53,7 @@ const Features = () => {
           </div>
         </div>
       </div>
-    </div>
+    </HomeLayout>
   );
 };
 

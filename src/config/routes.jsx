@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
+import { ProtectedRoute, PublicRoute } from "../utils/routes";
 
 const HomePage = lazy(() => import("../pages/home/HomePage"));
 const Features = lazy(() => import("../pages/features/Features"));
@@ -12,34 +13,21 @@ const Brands = lazy(() => import("../pages/brand/brand"));
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <PublicRoute />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/home", element: <HomePage /> },
+      { path: "/login", element: <Login /> },
+    ],
   },
   {
-    path: "/home",
-    element: <HomePage />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path: "/features",
-    element: <Features />,
-  },
-  {
-    path: "/pricing",
-    element: <Pricing />,
-  },
-  {
-    path: "/ourworks",
-    element: <Works />,
-  },
-  {
-    path: "/brands",
-    element: <Brands />,
+    element: <ProtectedRoute />,
+    children: [
+      { path: "/contact", element: <Contact /> },
+      { path: "/features", element: <Features /> },
+      { path: "/pricing", element: <Pricing /> },
+      { path: "/ourworks", element: <Works /> },
+      { path: "/brands", element: <Brands /> },
+    ],
   },
 ]);
