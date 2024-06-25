@@ -5,7 +5,7 @@ import Textarea from "../../common/textarea/Textarea";
 import Button from "../../common/button/Button";
 import Label from "../../common/label/Label";
 import Checkbox from "../../common/checkbox/Checkbox";
-import Selectbox from "../../common/selectbox/Selectbox";
+import Selectbox from "../../common/selectbox";
 
 const ContactForm = ({ contactInfo }) => {
   const { name, setName, email, setEmail, message, setMessage } = {
@@ -30,7 +30,7 @@ const ContactForm = ({ contactInfo }) => {
         </div>
         <div className={styles.input_con_label}>
           <Label>BUDGET</Label>
-          <Selectbox className={styles.budget_select}/>
+          <Selectbox className={styles.budget_select} />
         </div>
       </div>
       <div className={styles.first_con}>

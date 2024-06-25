@@ -1,47 +1,67 @@
 .inputs_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-    padding: 70px 80px;
-  }
-  
-  .signup_input {
-    width: 90%;
-    padding: 15px;
-    border-radius: 30px;
-    border: solid 2px #ebeaed;
-  }
-  
-  .signup_btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #25dac5;
-  }
-  
-  .signup_btn_twt {
-    width: 100%;
-    padding: 15px;
-    background-color: #1da1f2;
-  }
-  
-  .divider {
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: #ebeaed;
-    text-align: center;
-  }
-  
-  .divider::before,
-  .divider::after {
-    flex: 1;
-    content: "";
-    padding: 1px;
-    background-color: #ebeaed;
-    margin: 5px;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 70px 80px;
+}
+
+.signup_input {
+  width: 90%;
+  padding: 15px;
+  border-radius: 30px;
+  border: solid 2px #ebeaed;
+}
+
+.signup_btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #25dac5;
+}
+
+.signup_btn_twt {
+  width: 100%;
+  padding: 15px;
+  background-color: #1da1f2;
+}
+
+.divider {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #ebeaed;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  flex: 1;
+  content: "";
+  padding: 1px;
+  background-color: #ebeaed;
+  margin: 5px;
+}
+
+.haveAcc_container {
+  display: flex;
+  gap: 8px;
+}
+
+.haveAcc_label {
+  color: #1e0e62;
+  font-size: 14px;
+  opacity: 50%;
+}
+
+.login_label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.login_label a {
+  text-decoration: none;
+  color: #1da1f2;
+}

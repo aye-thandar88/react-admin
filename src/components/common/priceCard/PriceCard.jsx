@@ -3,7 +3,7 @@ import Button from "../button/Button";
 import List from "../list/List";
 import styles from "./PriceCard.module.css";
 
-const PriceCard = ({ plan }) => {
+const PriceCard = ({ plan, onClick }) => {
   const { name, price, offers } = { ...plan };
 
   return (
@@ -20,7 +20,9 @@ const PriceCard = ({ plan }) => {
         <List offers={offers} />
       </div>
 
-      <Button className={styles.price_btn}>Get Started</Button>
+      <Button className={styles.price_btn} onClick={onClick}>
+        Get Started
+      </Button>
     </div>
   );
 };

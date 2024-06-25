@@ -47,3 +47,8 @@
   background-color: transparent;
   font-size: 16px;
 }
+
+.works_btn:hover {
+  background-color: whitesmoke;
+  color: #2f1893;
+}

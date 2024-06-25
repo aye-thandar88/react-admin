@@ -2,8 +2,10 @@ import React from "react";
 import Input from "../../common/input/Input";
 import Button from "../../common/button/Button";
 import styles from "./SignUpForm.module.css";
+import Label from "../../common/label/Label";
+import Toast from "../../common/toast";
 
-const SignUpForm = ({ loginInfo }) => {
+const SignUpForm = ({ loginInfo, onClickSignup }) => {
   const { email, password, setEmail, setPassword } = { ...loginInfo };
 
   return (
@@ -28,11 +30,18 @@ const SignUpForm = ({ loginInfo }) => {
         }}
         className={styles.signup_input}
       />
-      <Button className={styles.signup_btn} onClick={() => {}}>
+      <Button className={styles.signup_btn} onClick={onClickSignup}>
         Create an Account
       </Button>
+      <div className={styles.haveAcc_container}>
+        <Label className={styles.haveAcc_label}>Already have an account?</Label>
+        <Label className={styles.login_label}>
+          <a href="/login">Login</a>
+        </Label>
+      </div>
       <div className={styles.divider}>or</div>
       <Button className={styles.signup_btn_twt}>Login via Twitter</Button>
+      <Toast style={{ width: "50%" }} position="top-center"/>
     </form>
   );
 };
