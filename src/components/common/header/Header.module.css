@@ -12,6 +12,7 @@
 .nav_container {
   padding-top: 36px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 43px;
 }
@@ -22,4 +23,20 @@
 
 .nav_li:hover {
   font-weight: bold;
+}
+
+.logOut_btn_container {
+  padding-top: 36px;
+  display: flex; 
+  margin-left: 20%;
+  margin-right: 30px;
+}
+
+.logOut_btn {
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #482be7;
+  font-size: 16px;
 }
