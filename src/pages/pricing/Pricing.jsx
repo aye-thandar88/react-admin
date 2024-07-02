@@ -5,48 +5,15 @@ import { plans } from "../../assets/constant/priceConstant";
 import ContentCard from "../../components/common/contentCard/ContentCard";
 import { priceContentData } from "../../assets/constant/cardConstant";
 import HomeLayout from "../../components/layout/homeLayout/HomeLayout";
-import { getApi, refreshAccessToken } from "../../api";
-import { useLocalStorage } from "../../hooks/useLocalStorage.js";
-import { useNavigate } from "react-router-dom";
+import { getApi } from "../../api";
 
 const Pricing = () => {
-  const [token, setToken, removeToken] = useLocalStorage("token", null);
-  const [refreshToken, setRefreshToken, removeRefreshToken] = useLocalStorage(
-    "refreshToken",
-    null
-  );
-  const [isAuthenticated, setAuth] = useLocalStorage("isAuthenticated", false);
-  const navigate = useNavigate();
-
   const handleClick = async () => {
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
-
     try {
-      const response = await getApi("/users", headers);
+      const response = await getApi("/users");
       console.log("res", response);
     } catch (err) {
-      if (err.response && err.response.status === 401) {
-        try {
-          const newToken = await refreshAccessToken(
-            "/users/refresh-token",
-            refreshToken
-          );
-
-          const newHeaders = newToken?.data?.accessToken
-            ? { Authorization: `Bearer ${newToken?.data?.accessToken}` }
-            : {};
-
-          if (newHeaders) {
-            const response = await getApi("/users", newHeaders);
-            console.log("response", response);
-          }
-        } catch (err) {
-          if (err.response) {
-            setAuth(false);
-            navigate("/login");
-          }
-        }
-      }
+      console.log("err com", err);
     }
   };
 
@@ -61,7 +28,7 @@ const Pricing = () => {
           {plans.map((plan, index) => {
             return (
               plan && (
-                <PriceCard index={index} plan={plan} onClick={handleClick} />
+                <PriceCard key={index} plan={plan} onClick={handleClick} />
               )
             );
           })}

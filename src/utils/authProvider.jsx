@@ -1,53 +1,50 @@
 import { createContext, useEffect } from "react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import useTokenService from "../hooks/useTokenService";
 import { postApi } from "../api";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [token, setToken, removeToken] = useLocalStorage("token", null);
-  const [refreshToken, setRefreshToken, removeRefreshToken] = useLocalStorage(
-    "refreshToken",
-    null
-  );
+  const {
+    getLocalAccessToken,
+    getLocalRefreshToken,
+    setLocalAccessToken,
+    setLocalRefreshToken,
+    removeTokens,
+  } = useTokenService();
   const [isAuthenticated, setAuth] = useLocalStorage("isAuthenticated", false);
-
-  useEffect(
-    () => {
-      setToken(token);
-      setRefreshToken(refreshToken);
-    },
-    token,
-    refreshToken
-  );
 
   const login = async (data) => {
     try {
-      const response = await postApi(`/users/login`, data);
-
+      const response = await postApi("/users/login", data);
       if (response.status === 200) {
-        setToken(response.data.token);
-        setRefreshToken(response.data.refreshToken);
+        setLocalAccessToken(response.data.token);
+        setLocalRefreshToken(response.data.refreshToken);
         setAuth(true);
-        return response.data;
+        return response;
       }
     } catch (err) {
-      if (err instanceof Error) {
-        console.log("err", err);
-        throw err;
-      }
+      console.error("Error during login:", err);
+      throw err;
     }
   };
 
   const logout = async () => {
-    removeToken();
-    removeRefreshToken();
+    removeTokens();
     setAuth(false);
+    window.location.href = "/login";
   };
 
   return (
     <AuthContext.Provider
-      value={{ token, refreshToken, isAuthenticated, login, logout }}
+      value={{
+        getLocalAccessToken,
+        getLocalRefreshToken,
+        isAuthenticated,
+        login,
+        logout,
+      }}
     >
       {children}
     </AuthContext.Provider>

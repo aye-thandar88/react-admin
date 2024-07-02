@@ -1,25 +1,17 @@
 import React from "react";
 import styles from "./HomeLayout.module.css";
 import Navbar from "../../common/header/Navbar";
-import { useLocalStorage } from "../../../hooks/useLocalStorage.js";
-import { useNavigate } from "react-router-dom";
-import useToast from "../../../hooks/useToast.js";
+import useAuth from "../../../hooks/useAuth.js";
 import { logoutMsg } from "../../../assets/constant/message.js";
+import useToast from "../../../hooks/useToast.js";
 
 const HomeLayout = ({ children, className }) => {
-  const [token, setToken, removeToken] = useLocalStorage("token", null);
-  const [refreshToken, setRefreshToken, removeRefreshToken] = useLocalStorage(
-    "refreshToken",
-    null
-  );
-  const [isAuthenticated, setAuth] = useLocalStorage("isAuthenticated", false);
-  const navigate = useNavigate();
+  const { logout } = useAuth();
+  const { showToast } = useToast();
 
   const handleLogout = () => {
-    removeToken();
-    removeRefreshToken();
-    setAuth(false);
-    navigate("/login");
+    showToast(logoutMsg);
+    logout();
   };
 
   return (

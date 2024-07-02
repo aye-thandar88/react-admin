@@ -3,7 +3,6 @@ import Input from "../../common/input/Input";
 import Button from "../../common/button/Button";
 import styles from "./SignUpForm.module.css";
 import Label from "../../common/label/Label";
-import Toast from "../../common/toast";
 
 const SignUpForm = ({ loginInfo, onClickSignup }) => {
   const { email, password, setEmail, setPassword } = { ...loginInfo };
@@ -41,7 +40,6 @@ const SignUpForm = ({ loginInfo, onClickSignup }) => {
       </div>
       <div className={styles.divider}>or</div>
       <Button className={styles.signup_btn_twt}>Login via Twitter</Button>
-      <Toast style={{ width: "50%" }} position="top-center"/>
     </form>
   );
 };

@@ -16,7 +16,7 @@ const List = ({ offers }) => {
     <div className={styles.lst_container}>
       {list.map((offer, index) => {
         return (
-          <div className={styles.checkdbox_container}>
+          <div className={styles.checkdbox_container} key={index}>
             <input
               type="checkbox"
               value={offer.no}

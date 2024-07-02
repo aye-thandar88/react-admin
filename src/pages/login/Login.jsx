@@ -5,22 +5,19 @@ import LoginForm from "../../components/form/loginForm/LoginForm";
 import SignUpForm from "../../components/form/signupForm/SignUpForm";
 import ContentCard from "../../components/common/contentCard/ContentCard";
 import { loginContentData } from "../../assets/constant/cardConstant";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
 import { postApi } from "../../api";
-import { toast } from "react-toastify";
+import useToast from "../../hooks/useToast";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [title, setTitle] = useState("login");
-  const [token, setToken, removeToken] = useLocalStorage("token", null);
-  const [refreshToken, setRefreshToken, removeRefreshToken] = useLocalStorage(
-    "refreshToken",
-    null
-  );
-  const [isAuthenticated, setAuth] = useLocalStorage("isAuthenticated", false);
+  const { login } = useAuth();
+
   const navigate = useNavigate();
+  const { showToast } = useToast();
 
   let loginInfo = {
     email: email,
@@ -34,23 +31,18 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await postApi(`/users/login`, body);
-
+      const response = await login(body);
       if (response.status === 200) {
-        setToken(response.data.token);
-        setRefreshToken(response.data.refreshToken);
-        setAuth(true);
         navigate("/");
-        setEmail("");
-        setPassword("");
       }
     } catch (err) {
       if (err.response.status === 404) {
         setTitle("signup");
+        showToast({ status: "error", text: err.response.data.message });
       }
-      setEmail("");
-      setPassword("");
     }
+
+    setClear();
   };
 
   const handleSignup = async (e) => {
@@ -58,17 +50,22 @@ const Login = () => {
 
     try {
       const response = await postApi(`/users/register`, body);
-
       if (response.status === 201) {
-        toast.success(response.data.message);
-        setEmail("");
-        setPassword("");
+        const message = { status: "success", text: response.data.message };
+        showToast(message);
       }
-    } catch (err) {
-      setEmail("");
-      setPassword("");
-    }
+    } catch (err) {}
+    setClear();
   };
+
+  const setClear = () => {
+    setEmail("");
+    setPassword("");
+  };
+
+  const handleGoHome = () => {
+    navigate("/")
+  }
 
   return (
     <div className={styles.login_page}>
@@ -103,7 +100,11 @@ const Login = () => {
             </div>
             {title === "login" ? (
               <>
-                <LoginForm loginInfo={loginInfo} onClick={handleLogin} />
+                <LoginForm
+                  loginInfo={loginInfo}
+                  onClick={handleLogin}
+                  onClickHomeBtn={handleGoHome}
+                />
               </>
             ) : (
               <>

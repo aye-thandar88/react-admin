@@ -2,9 +2,14 @@ import { useContext } from "react";
 import { ToastContext } from "../utils/toastProvider";
 
 const useToast = () => {
-  const useToast = useContext(ToastContext);
+  const context = useContext(ToastContext);
 
-  return useToast;
+  if (context === undefined) {
+    throw new Error(
+      "useToast context must be used within a ToastContextProvider"
+    );
+  }
+  return context;
 };
 
 export default useToast;

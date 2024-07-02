@@ -3,7 +3,7 @@ import Input from "../../common/input/Input";
 import Button from "../../common/button/Button";
 import styles from "./LoginForm.module.css";
 
-const LoginForm = ({ loginInfo, onClick }) => {
+const LoginForm = ({ loginInfo, onClick, onClickHomeBtn }) => {
   const { email, password, setEmail, setPassword } = { ...loginInfo };
 
   return (
@@ -30,6 +30,10 @@ const LoginForm = ({ loginInfo, onClick }) => {
       />
       <Button className={styles.signup_btn} onClick={onClick}>
         Login
+      </Button>
+      <div className={styles.divider}>or</div>
+      <Button className={styles.home_btn} onClick={onClickHomeBtn}>
+        Go back Home
       </Button>
     </form>
   );

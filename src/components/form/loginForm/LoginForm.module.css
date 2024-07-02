@@ -19,3 +19,28 @@
   padding: 15px;
   background-color: #1da1f2;
 }
+
+.divider {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #ebeaed;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  flex: 1;
+  content: "";
+  padding: 1px;
+  background-color: #ebeaed;
+  margin: 5px;
+}
+
+.home_btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #25dac5;
+}
