@@ -1,0 +1,65 @@
+.contact_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+  background-color: #593e7c;
+  border-right: solid 1px rgb(148, 148, 148);
+}
+
+.logo_img {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+}
+
+.title_container {
+  padding: 5px 20px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.menu_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+}
+
+.label {
+  color: lightgray;
+  text-transform: capitalize;
+}
+
+.footer_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.home_btn {
+  width: 100%;
+  padding: 15px;
+  background-color: transparent;
+}
+
+.home_btn:hover {
+  font-weight: bold;
+}
+
+.toggle_menu {
+  padding: 5px;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 780px) {
+  .contact_container {
+    width: 420px;
+    /* display: none; */
+  }
+}

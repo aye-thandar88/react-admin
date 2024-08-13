@@ -1,0 +1,75 @@
+.btn_trigger {
+  padding: 0;
+  background-color: transparent;
+  color: lightgray;
+}
+
+.tooltip_text {
+  font-size: 14px;
+  color: lightgray;
+}
+
+.dialog_content {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid red;
+}
+
+.search_user {
+  width: 80%;
+  padding: 15px;
+  border-radius: 8px;
+  border: solid 2px #ebeaed;
+  outline: none;
+}
+
+.logo_img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.contactList_container {
+  width: 85%;
+  height: 40vh;
+  overflow-y: scroll;
+  margin-top: 5px;
+}
+
+.contactList_container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contactList_container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.contactList_container::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  /* box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2); */
+}
+
+.contactList_container::-webkit-scrollbar-track {
+  /* background: #e1e1e1; */
+  border-radius: 4px;
+}
+
+.contact_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 5px;
+}
+
+.contact_container:hover {
+  background-color: #f0eded;
+  border-radius: 18px;
+}
+
+.contactLabel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

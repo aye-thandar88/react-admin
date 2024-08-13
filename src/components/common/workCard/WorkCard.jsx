@@ -5,10 +5,10 @@ const WorkCard = ({ work }) => {
   const { imgSrc, type, name } = { ...work };
   return (
     <div className={styles.work_card}>
-      <img src={imgSrc} alt={type} className={""} loading="lazy" />
+      <img src={imgSrc} alt={type} className={styles.img} loading="lazy" />
       <div className={styles.work_description}>
-        <span style={{ fontSize: "14px" }}>{type.toUpperCase()}</span>
-        <span style={{ fontSize: "18px" }}>{name}</span>
+        <span className={styles.type}>{type.toUpperCase()}</span>
+        <span className={styles.name}>{name}</span>
       </div>
     </div>
   );

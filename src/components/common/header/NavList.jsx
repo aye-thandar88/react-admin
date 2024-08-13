@@ -8,6 +8,7 @@ const NavList = () => {
     "Pricing",
     "Our Works",
     "Our Clients",
+    "Chat",
     "Contact",
   ];
   return (

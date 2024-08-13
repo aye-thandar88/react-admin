@@ -7,8 +7,8 @@ import ContentCard from "../../components/common/contentCard/ContentCard";
 import { loginContentData } from "../../assets/constant/cardConstant";
 import { useNavigate } from "react-router-dom";
 import { postApi } from "../../api";
-import useToast from "../../hooks/useToast";
-import useAuth from "../../hooks/useAuth";
+import { useToast } from "../../context/ToastContext";
+import { useAuth } from "../../context/AuthContext";
 import {
   RequiredValidation,
   StringLengthValidation,

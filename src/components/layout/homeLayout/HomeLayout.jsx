@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./HomeLayout.module.css";
 import Navbar from "../../common/header/Navbar";
-import useAuth from "../../../hooks/useAuth.js";
+import { useAuth } from "../../../context/AuthContext.jsx";
 import { logoutMsg } from "../../../assets/constant/message.js";
-import useToast from "../../../hooks/useToast.js";
+import { useToast } from "../../../context/ToastContext.jsx";
 
 const HomeLayout = ({ children, className }) => {
   const { logout } = useAuth();

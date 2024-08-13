@@ -8,14 +8,16 @@ const Textarea = ({
   placeholder,
   className,
   children,
+  onChange,
 }) => {
   return (
     <textarea
       id={id}
-      value={name}
+      value={value}
       rows={rows}
       placeholder={placeholder}
       className={`${className ? className : styles.default}`}
+      onChange={onChange}
     >
       {children}
     </textarea>

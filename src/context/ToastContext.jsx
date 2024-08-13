@@ -1,10 +1,25 @@
-import { createContext, useCallback } from "react";
+import { createContext, useCallback, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
-export const ToastContext = createContext();
+const ToastContext = createContext();
 
-const ToastProvider = ({ children, position = "top-right", ...rest }) => {
+export const useToast = () => {
+  const context = useContext(ToastContext);
+
+  if (context === undefined) {
+    throw new Error(
+      "useToast context must be used within a ToastContextProvider"
+    );
+  }
+  return context;
+};
+
+export const ToastProvider = ({
+  children,
+  position = "top-right",
+  ...rest
+}) => {
   const showToast = useCallback(
     (message, options = {}) => {
       if (message.status === "success") {
@@ -29,5 +44,3 @@ const ToastProvider = ({ children, position = "top-right", ...rest }) => {
     </ToastContext.Provider>
   );
 };
-
-export default ToastProvider;

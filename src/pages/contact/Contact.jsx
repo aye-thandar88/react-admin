@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./Contact.module.css";
 import ContactForm from "../../components/form/contactForm/ContactForm";
 import {
@@ -6,19 +6,48 @@ import {
   contactContentData,
 } from "../../assets/constant/cardConstant";
 import ContentCard from "../../components/common/contentCard/ContentCard";
+import emailjs from "@emailjs/browser";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "../../context/ToastContext";
 
 const Contact = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [message, setMessage] = useState();
+  const form = useRef();
+  const navigate = useNavigate();
+  const { showToast } = useToast();
 
   let contactInfo = {
+    form,
     name,
     setName,
     email,
     setEmail,
     message,
     setMessage,
+  };
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_gdsg1hb", "template_lzzm5hm", form.current, {
+        publicKey: "nJwTva7DwydKJWI8Q",
+      })
+      .then(
+        () => {
+          const message = {
+            status: "success",
+            text: "Message has been sent successfully!",
+          };
+          showToast(message);
+          navigate("/");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   return (
@@ -48,7 +77,10 @@ const Contact = () => {
         </div>
         <div className={styles.contact_content}>
           <div className={styles.form}>
-            <ContactForm contactInfo={contactInfo} />
+            <ContactForm
+              contactInfo={contactInfo}
+              onClick={handleSendMessage}
+            />
           </div>
         </div>
       </div>

@@ -1,3 +1,19 @@
+/* .work_card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.work_description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+} */
+
+/* Base Styles */
 .work_card {
   display: flex;
   flex-direction: column;
@@ -11,4 +27,71 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.img {
+  width: 100%;
+}
+
+.type {
+  font-size: 12px;
+}
+
+.name {
+  font-size: 14px;
+}
+
+/* Medium Screens */
+@media screen and (min-width: 600px) {
+  .work_card {
+    flex-direction: column; /* Change to row layout on medium screens */
+    gap: 30px;
+    padding: 20px; /* Increase padding for medium screens */
+  }
+
+  .work_description {
+    gap: 10px;
+  }
+
+  .type {
+    font-size: 14px;
+  }
+  
+  .name {
+    font-size: 16px;
+  }
+  
+}
+
+/* Large Screens */
+@media screen and (min-width: 800px) {
+  .work_card {
+    gap: 40px;
+    padding: 30px; /* Increase padding for large screens */
+  }
+
+  .work_description {
+    gap: 12px;
+  }
+}
+
+/* Extra Large Screens */
+@media screen and (min-width: 1200px) {
+  .work_card {
+    gap: 50px;
+    padding: 40px; /* Increase padding for extra large screens */
+  }
+
+  .work_description {
+    gap: 15px;
+  }
+
+  .type {
+    font-size: 14px;
+  }
+  
+  .name {
+    font-size: 18px;
+  }
+  
 }

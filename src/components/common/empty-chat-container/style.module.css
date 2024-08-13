@@ -1,0 +1,25 @@
+.empty_chat_container {
+  flex-grow: 1;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  animation-duration: 1000ms;
+  transition: all;
+}
+
+.welcome_text {
+  text-align: center;
+  font-size: large;
+}
+
+.sync_text{
+  color: rgb(84, 9, 153);
+}
+
+@media only screen and (max-width: 420px) {
+  .empty_chat_container {
+    display: none;
+  }
+}

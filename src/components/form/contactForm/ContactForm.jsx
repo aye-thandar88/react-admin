@@ -7,20 +7,20 @@ import Label from "../../common/label/Label";
 import Checkbox from "../../common/checkbox/Checkbox";
 import Selectbox from "../../common/selectbox";
 
-const ContactForm = ({ contactInfo }) => {
-  const { name, setName, email, setEmail, message, setMessage } = {
+const ContactForm = ({ contactInfo, onClick }) => {
+  const { form, name, setName, email, setEmail, message, setMessage } = {
     ...contactInfo,
   };
 
   return (
-    <form className={styles.inputs_container}>
+    <form className={styles.inputs_container} onSubmit={onClick} ref={form}>
       <div className={styles.first_con}>
         <div className={styles.input_con_label}>
           <Label>YOUR NAME</Label>
           <Input
             id={"name"}
             type={"text"}
-            value={email}
+            value={name}
             placeholder={"First name"}
             onChange={(e) => {
               setName(e.target.value);
@@ -35,14 +35,14 @@ const ContactForm = ({ contactInfo }) => {
       </div>
       <div className={styles.first_con}>
         <div className={styles.full_input_con_label}>
-          <Label>INPUT FIELD</Label>
+          <Label>YOUR EMAIL</Label>
           <Input
             id={"email"}
             type={"email"}
             value={email}
             placeholder={"name@mail.com"}
             onChange={(e) => {
-              setName(e.target.value);
+              setEmail(e.target.value);
             }}
             className={styles.contact_input}
           />
@@ -51,7 +51,14 @@ const ContactForm = ({ contactInfo }) => {
       <div className={styles.first_con}>
         <div className={styles.full_input_con_label}>
           <Label>YOUR MESSAGE</Label>
-          <Textarea className={styles.msg_textara} placeholder={"Message"} />
+          <Textarea
+            className={styles.msg_textara}
+            placeholder={"Message"}
+            value={message}
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+          />
         </div>
       </div>
       <div className={styles.first_con}>

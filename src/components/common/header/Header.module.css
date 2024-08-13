@@ -11,10 +11,8 @@
 
 .nav_container {
   padding-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
+  display: none;
   justify-content: center;
-  gap: 43px;
 }
 
 .nav_li {
@@ -46,5 +44,16 @@
 .user_icon {
   width: 45px;
   height: 45px;
-  border-radius: 50%;
+  border-radius: 100%;
+}
+
+.img_container {
+  padding-top: 20px;
+}
+
+@media (min-width: 568px) {
+  .nav_container {
+    gap: 23px;
+    display: flex;
+  }
 }

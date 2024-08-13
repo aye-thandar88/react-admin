@@ -1,4 +1,4 @@
-.works_page {
+/* .works_page {
   margin: 0;
   min-height: 100vh;
   background-color: #2f1893;
@@ -51,4 +51,115 @@
 .works_btn:hover {
   background-color: whitesmoke;
   color: #2f1893;
+} */
+
+/* Base Styles */
+.works_page {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #2f1893;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.works_container {
+  padding: 20px 10px; /* Adding padding for smaller screens */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%; /* Make container responsive */
+}
+
+.works_title {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; /* Stack titles vertically on small screens */
+  align-items: center; /* Center align for small screens */
+  padding: 20px 0;
+}
+
+.works_title h1 {
+  font-size: 32px; /* Adjust font size for smaller screens */
+  text-align: center;
+}
+
+.works_cards_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center cards on smaller screens */
+  gap: 20px; /* Smaller gap for smaller screens */
+}
+
+.works_btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.works_btn {
+  border: 1px solid gray;
+  border-radius: 30px;
+  padding: 15px 20px;
+  text-align: center;
+  background-color: transparent;
+  font-size: 14px;
+  margin-top: 20px; /* Add margin for better spacing on small screens */
+}
+
+.works_btn:hover {
+  background-color: whitesmoke;
+  color: #2f1893;
+}
+
+/* Medium Screens */
+@media screen and (min-width: 600px) {
+  .works_container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .works_title {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .works_title h1 {
+    font-size: 40px;
+  }
+
+  .works_cards_container {
+    gap: 25px;
+  }
+}
+
+/* Large Screens */
+@media screen and (min-width: 800px) {
+  .works_container {
+    padding: 20px 0;
+    width: 970px;
+  }
+
+  .works_title h1 {
+    font-size: 42px;
+  }
+
+  .works_cards_container {
+    gap: 30px;
+  }
+}
+
+/* Extra Large Screens */
+@media screen and (min-width: 1200px) {
+  .works_container {
+    width: 1170px;
+  }
+
+  .works_title h1 {
+    font-size: 48px;
+  }
+
+  .works_cards_container {
+    gap: 40px;
+  }
 }

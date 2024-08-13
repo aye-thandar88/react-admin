@@ -10,6 +10,7 @@ const Login = lazy(() => import("../pages/login/Login"));
 const Contact = lazy(() => import("../pages/contact/Contact"));
 const Brands = lazy(() => import("../pages/brand/brand"));
 const Error = lazy(() => import("../pages/error/Error"));
+const Chat = lazy(() => import("../pages/chat/Chat"));
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
       { path: "/pricing", element: <Pricing /> },
       { path: "/ourworks", element: <Works /> },
       { path: "/ourclients", element: <Brands /> },
+      { path: "/chat", element: <Chat /> },
     ],
   },
 ]);
